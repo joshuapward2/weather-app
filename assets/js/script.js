@@ -7,8 +7,8 @@ var searchButton = document.getElementById("btn");
 
 // Full api before breaking it up
 
-var fullUrl =  "https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=d12707350df08c4703683ba822b2a53b";
-console.log(fullUrl);
+//var fullUrl =  "https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=d12707350df08c4703683ba822b2a53b";
+//console.log(fullUrl);
 
 // Api broken up
 
@@ -17,9 +17,12 @@ var myApiKey = "&appid=d12707350df08c4703683ba822b2a53b";
 var farenheit = "&units=imperial"
 
 var formSubmitHandler = function(event) {
-        // prevent page from refreshing
 
+        // prevent page from refreshing
        event.preventDefault();
+
+       // Fetch the search input
+
       var city = cityInputEl.value.trim()
 var apiUrl = defaultapiUrl + city + farenheit + myApiKey;
       
@@ -33,13 +36,15 @@ fetch(apiUrl).then(function(response) {
         response.json().then(function(data1) {
             console.log(data1);
 
+// Store in local Storage
 
 localStorage.setItem(city,JSON.stringify(data1));
 displayWeatherData(data1);
         })
     }
 })
-// get value from input element
+
+// get value and create elements 
 
 
 function displayWeatherData (data1) {
