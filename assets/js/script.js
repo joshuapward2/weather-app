@@ -28,13 +28,26 @@ var apiUrl = defaultapiUrl + city + farenheit + myApiKey;
       
 fetch(apiUrl).then(function(response) {
     console.log(response);
-
-
-    //request response
-
+  //request response
     if(response.ok) {
+
         response.json().then(function(data1) {
             console.log(data1);
+  
+      //second fetch
+    var fiveDayForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data1.coord.lat}&lon=${data1.coord.lon}&units=imperial&appid=d12707350df08c4703683ba822b2a53b`;
+
+  
+    fetch(fiveDayForecastUrl).then(function(response) {
+        response.json().then(function(data2) {
+            console.log(data2);
+            document.querySelector("#temp0").textContent = data2.daily[0].temp.day;
+            //document.querySelector("#wind0").textContent =
+        })
+        console.log(response);
+
+    })
+
 
 // Store in local Storage
 
