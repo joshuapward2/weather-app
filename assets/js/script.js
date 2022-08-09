@@ -33,6 +33,8 @@ fetch(apiUrl).then(function(response) {
 
         response.json().then(function(data1) {
             console.log(data1);
+            //document.querySelector("#name").textContent = data1.weather[0]
+
   
       //second fetch
     var fiveDayForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data1.coord.lat}&lon=${data1.coord.lon}&units=imperial&appid=d12707350df08c4703683ba822b2a53b`;
@@ -41,8 +43,61 @@ fetch(apiUrl).then(function(response) {
     fetch(fiveDayForecastUrl).then(function(response) {
         response.json().then(function(data2) {
             console.log(data2);
-            document.querySelector("#temp0").textContent = data2.daily[0].temp.day;
-            //document.querySelector("#wind0").textContent =
+           
+            //Daily weather forecast rendering in list in larger container
+
+            document.querySelector("#temp0").textContent = "Daily Temperature: " + data2.daily[0].temp.day + " ℉";
+            document.querySelector("#wind0").textContent = "Daily wind speed: " + data2.daily[0].wind_speed + " M.P.H";
+            document.querySelector("#humidity0").textContent = "Daily humidity index: " + data2.daily[0].humidity + " %";
+            document.querySelector("#uv0").textContent = "Daily UV index " + data2.daily[0].uvi;
+            //document.querySelector("#icon").textContent = data2.daily[0].weather[0];
+
+
+            // 5-day weather forecast rendering on cards
+
+            document.querySelector("#temp1").textContent = data2.daily[1].temp.day + " ℉"
+            document.querySelector("#wind1").textContent =  data2.daily[1].wind_speed + " M.P.H";
+            document.querySelector("#humidity1").textContent = data2.daily[1].humidity + " %";
+            //document.querySelector("#temp0").textContent =
+
+            // day 2
+
+            document.querySelector("#temp2").textContent = data2.daily[2].temp.day + " ℉"
+            document.querySelector("#wind2").textContent =  data2.daily[2].wind_speed + " M.P.H";
+            document.querySelector("#humidity2").textContent = data2.daily[2].humidity + " %";
+            //document.querySelector("#temp0").textContent =
+            
+
+            // day 3
+
+            document.querySelector("#temp3").textContent = data2.daily[3].temp.day + " ℉"
+            document.querySelector("#wind3").textContent = data2.daily[3].wind_speed + " M.P.H";
+            document.querySelector("#humidity3").textContent = data2.daily[3].humidity + " %";
+            //document.querySelector("#temp0").textContent =
+            
+
+            // day 4
+
+            document.querySelector("#temp4").textContent = data2.daily[4].temp.day + " ℉"
+            document.querySelector("#wind4").textContent = data2.daily[4].wind_speed + " M.P.H";
+            document.querySelector("#humidity4").textContent = data2.daily[4].humidity + " %";
+            //document.querySelector("#temp0").textContent =
+            
+
+            // day 5
+            
+            document.querySelector("#temp5").textContent = data2.daily[5].temp.day + " ℉"
+            document.querySelector("#wind5").textContent = data2.daily[5].wind_speed + " M.P.H";
+            document.querySelector("#humidity5").textContent = data2.daily[5].humidity + " %";
+            //document.querySelector("#temp0").textContent =
+
+        
+            
+            
+            
+
+
+
         })
         console.log(response);
 

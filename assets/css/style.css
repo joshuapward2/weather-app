@@ -29,10 +29,18 @@
     
   }
 
-  .form-input::focus{
+  .form-input:focus{
     outline: darkblue;
     
   }
+
+  .daily0 {
+    justify-content: space-evenly;
+    text-align: center;
+  }
   
+  #icon {
+    float: right;
+  }
   
   
