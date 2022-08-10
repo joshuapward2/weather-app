@@ -35,7 +35,7 @@
   }
 
   .daily0 {
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
   }
   
@@ -43,4 +43,7 @@
     float: right;
   }
   
+  .name {
+    text-decoration: underline;
+  }
   
