@@ -28,24 +28,29 @@
     border: 2px solid;
     
   }
+  
 
   .form-input:focus{
     outline: darkblue;
     
   }
 
+
   .daily0 {
     justify-content: space-around;
     text-align: center;
   }
   
+
   #icon {
     float: right;
   }
+
   
   .nameAndDate {
     text-decoration: underline;
   }
+
   
   .forecast {
 
@@ -54,10 +59,12 @@
   justify-content: space-between;
 
   }
+
   #name5, #card5 {
     text-align: center;
 
   }
+
 
   #name1, #name2, #name3, #name4, #name5 {
     text-decoration: underline;

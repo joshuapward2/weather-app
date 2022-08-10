@@ -19,6 +19,7 @@ var farenheit = "&units=imperial"
 var formSubmitHandler = function(event) {
 
         // prevent page from refreshing
+        
        event.preventDefault();
 
        // Fetch the search input
@@ -60,6 +61,7 @@ fetch(apiUrl).then(function(response) {
 
 
             // 5-day weather forecast rendering on cards
+
             var day1 = moment().add(1, 'day').format('l');
             var dateEl1 = document.querySelector("#name1")
             dateEl1.textContent = day1;
@@ -69,6 +71,7 @@ fetch(apiUrl).then(function(response) {
             //document.querySelector("#temp0").textContent =
 
             // day 2
+
             var day2 =  moment().add(2, 'day').format('l');
             var dateEl2 = document.querySelector("#name2")
             dateEl2.textContent = day2;
@@ -79,6 +82,7 @@ fetch(apiUrl).then(function(response) {
             
 
             // day 3
+
             var day3 =  moment().add(3, 'day').format('l');
             var dateEl3 = document.querySelector("#name3")
             dateEl3.textContent = day3;
@@ -89,6 +93,7 @@ fetch(apiUrl).then(function(response) {
             
 
             // day 4
+
             var day4 =  moment().add(4, 'day').format('l');
             var dateEl4 = document.querySelector("#name4")
             dateEl4.textContent = day4;
@@ -99,6 +104,7 @@ fetch(apiUrl).then(function(response) {
             
 
             // day 5
+
             var day5 =  moment().add(5, 'day').format('l');
             var dateEl5 = document.querySelector("#name5")
             dateEl5.textContent = day5;
@@ -107,15 +113,9 @@ fetch(apiUrl).then(function(response) {
             document.querySelector("#humidity5").textContent = "Humidity: " + data2.daily[5].humidity + " %";
             //document.querySelector("#temp0").textContent =
 
-        
-            
-            
-            
-
-
 
         })
-        console.log(response);
+     
 
     })
 
@@ -128,55 +128,13 @@ displayWeatherData(data1);
     }
 })
 
-// get value and create elements 
 
-
-function displayWeatherData (data1) {
-
-    
-
-
-}
-
-
-
-//        cityInputEl.value.trim();
  }
 
-// Event call function
-
- 
-//Fetch function
+// Event listener 
 
 
 searchButton.addEventListener("click", formSubmitHandler);
 
-
-
-
-
-
-
-
-
-// Save responses to local Storage
-
-
-
-
-
-
-
-
-
-// var formSubmitHandler = function(event) {
-
-
-
-//     // prevent page from refreshing
-//     event.preventDefault();
-  
-//     // get value from input element
-//     var cityInput = cityInputEl.value.trim();
 
     
