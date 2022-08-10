@@ -54,7 +54,12 @@
   justify-content: space-between;
 
   }
-  .name {
+  #name5, #card5 {
+    text-align: center;
+
+  }
+
+  #name1, #name2, #name3, #name4, #name5 {
     text-decoration: underline;
-    
+
   }
