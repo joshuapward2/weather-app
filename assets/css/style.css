@@ -43,7 +43,18 @@
     float: right;
   }
   
-  .name {
+  .nameAndDate {
     text-decoration: underline;
   }
   
+  .forecast {
+
+    display:flex;
+  align-items:center;
+  justify-content: space-between;
+
+  }
+  .name {
+    text-decoration: underline;
+    
+  }

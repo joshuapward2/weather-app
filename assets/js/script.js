@@ -43,7 +43,13 @@ fetch(apiUrl).then(function(response) {
     fetch(fiveDayForecastUrl).then(function(response) {
         response.json().then(function(data2) {
             console.log(data2);
-           
+
+            //Date
+            var todaysDate = moment().format("L");
+
+            document.querySelector(".nameAndDate").textContent = "Weather Forecast for " + todaysDate;
+        
+
             //Daily weather forecast rendering in list in larger container
 
             document.querySelector("#temp0").textContent = "Daily Temperature: " + data2.daily[0].temp.day + " ℉";
@@ -54,41 +60,51 @@ fetch(apiUrl).then(function(response) {
 
 
             // 5-day weather forecast rendering on cards
-
-            document.querySelector("#temp1").textContent = data2.daily[1].temp.day + " ℉"
-            document.querySelector("#wind1").textContent =  data2.daily[1].wind_speed + " M.P.H";
-            document.querySelector("#humidity1").textContent = data2.daily[1].humidity + " %";
+            var day1 = moment().add(1, 'day').format('l');
+            var dateEl1 = document.querySelector("#name1")
+            dateEl1.textContent = day1;
+            document.querySelector("#temp1").textContent = "Temp: " + data2.daily[1].temp.day + " ℉"
+            document.querySelector("#wind1").textContent =  "Wind: " + data2.daily[1].wind_speed + " M.P.H";
+            document.querySelector("#humidity1").textContent = "Humidity: " + data2.daily[1].humidity + " %";
             //document.querySelector("#temp0").textContent =
 
             // day 2
-
-            document.querySelector("#temp2").textContent = data2.daily[2].temp.day + " ℉"
-            document.querySelector("#wind2").textContent =  data2.daily[2].wind_speed + " M.P.H";
-            document.querySelector("#humidity2").textContent = data2.daily[2].humidity + " %";
+            var day2 =  moment().add(2, 'day').format('l');
+            var dateEl2 = document.querySelector("#name2")
+            dateEl2.textContent = day2;
+            document.querySelector("#temp2").textContent = "Temp: " + data2.daily[2].temp.day + " ℉"
+            document.querySelector("#wind2").textContent =  "Wind: " + data2.daily[2].wind_speed + " M.P.H";
+            document.querySelector("#humidity2").textContent = "Humidity: " + data2.daily[2].humidity + " %";
             //document.querySelector("#temp0").textContent =
             
 
             // day 3
-
-            document.querySelector("#temp3").textContent = data2.daily[3].temp.day + " ℉"
-            document.querySelector("#wind3").textContent = data2.daily[3].wind_speed + " M.P.H";
-            document.querySelector("#humidity3").textContent = data2.daily[3].humidity + " %";
+            var day3 =  moment().add(3, 'day').format('l');
+            var dateEl3 = document.querySelector("#name3")
+            dateEl3.textContent = day3;
+            document.querySelector("#temp3").textContent = "Temp: " + data2.daily[3].temp.day + " ℉"
+            document.querySelector("#wind3").textContent = "Wind: " + data2.daily[3].wind_speed + " M.P.H";
+            document.querySelector("#humidity3").textContent = "Humidity: " + data2.daily[3].humidity + " %";
             //document.querySelector("#temp0").textContent =
             
 
             // day 4
-
-            document.querySelector("#temp4").textContent = data2.daily[4].temp.day + " ℉"
-            document.querySelector("#wind4").textContent = data2.daily[4].wind_speed + " M.P.H";
-            document.querySelector("#humidity4").textContent = data2.daily[4].humidity + " %";
+            var day4 =  moment().add(4, 'day').format('l');
+            var dateEl4 = document.querySelector("#name4")
+            dateEl4.textContent = day4;
+            document.querySelector("#temp4").textContent = "Temp: " + data2.daily[4].temp.day + " ℉"
+            document.querySelector("#wind4").textContent = "Wind: " + data2.daily[4].wind_speed + " M.P.H";
+            document.querySelector("#humidity4").textContent = "Humidity: " + data2.daily[4].humidity + " %";
             //document.querySelector("#temp0").textContent =
             
 
             // day 5
-            
-            document.querySelector("#temp5").textContent = data2.daily[5].temp.day + " ℉"
-            document.querySelector("#wind5").textContent = data2.daily[5].wind_speed + " M.P.H";
-            document.querySelector("#humidity5").textContent = data2.daily[5].humidity + " %";
+            var day5 =  moment().add(5, 'day').format('l');
+            var dateEl5 = document.querySelector("#name5")
+            dateEl5.textContent = day5;
+            document.querySelector("#temp5").textContent = "Temp: " + data2.daily[5].temp.day + " ℉"
+            document.querySelector("#wind5").textContent = "Wind: " + data2.daily[5].wind_speed + " M.P.H";
+            document.querySelector("#humidity5").textContent = "Humidity: " + data2.daily[5].humidity + " %";
             //document.querySelector("#temp0").textContent =
 
         
