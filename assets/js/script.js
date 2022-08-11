@@ -5,7 +5,7 @@ var searchBoxContainerEL = document.getElementById("searchBoxContainer");
 var  cityInputEl = document.getElementById("form-input");
 var searchButton = document.getElementById("btn");
 
-// Full api before breaking it up
+// Full api before breaking it up. I left this for resource purposes
 
 //var fullUrl =  "https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=d12707350df08c4703683ba822b2a53b";
 //console.log(fullUrl);
@@ -29,7 +29,8 @@ var apiUrl = defaultapiUrl + city + farenheit + myApiKey;
       
 fetch(apiUrl).then(function(response) {
     console.log(response);
-  //request response
+  
+    //request response
     if(response.ok) {
 
         response.json().then(function(data1) {
@@ -45,7 +46,12 @@ fetch(apiUrl).then(function(response) {
         response.json().then(function(data2) {
             console.log(data2);
 
+            //Save to LocalStorage
+
+            localStorage.setItem(city,JSON.stringify(data2));
+
             //Date
+
             var todaysDate = moment().format("L");
 
             document.querySelector(".nameAndDate").textContent = "Weather Forecast for " + todaysDate;
@@ -113,17 +119,16 @@ fetch(apiUrl).then(function(response) {
             document.querySelector("#humidity5").textContent = "Humidity: " + data2.daily[5].humidity + " %";
             //document.querySelector("#temp0").textContent =
 
-
+          
         })
      
 
     })
 
 
-// Store in local Storage
 
-localStorage.setItem(city,JSON.stringify(data1));
-displayWeatherData(data1);
+
+
         })
     }
 })
